@@ -5,8 +5,6 @@ A aplicação permitirá cadastrar livros, gerenciar empréstimos, acompanhar us
 
 O sistema será desenvolvido utilizando tecnologias modernas de backend e frontend, com foco em escalabilidade e facilidade de uso.  
 
----
-
 ## 📅 Cronograma de Tarefas  
 
 ### 📅 2025-09-01
