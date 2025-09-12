@@ -9,9 +9,6 @@ O sistema será desenvolvido utilizando tecnologias modernas de backend e fronte
 
 ## 📅 Cronograma de Tarefas  
 
-As tarefas estão distribuídas em checkpoints semanais (a cada 7 dias).  
-Você pode marcar as tarefas como concluídas ✅ ou pendentes ❌.  
-
 ### 📅 2025-09-01
 - [x] 🏗️ Desenho da estrutura inicial do projeto
 - [x] 🗂️ Definição do modelo do biblioteca.
