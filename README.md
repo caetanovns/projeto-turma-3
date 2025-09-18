@@ -14,4 +14,12 @@ O sistema será desenvolvido utilizando tecnologias modernas de backend e fronte
 ### 📅 2025-09-08
 - [x] 🍴 Adicionado Factories e Seeders dos Modelos
 - [x] 📋 Adicionado Controlador e Template do Livro.
+
+### 📅 2025-09-17
+- [X] adicionado controlador de livros - store
+- [X] incluir categoria do livro no form do livro.
+- [ ] adicionar validação na requisição para adicionar/editar livros
+- [ ] filtro da páginas de livros categoria e autor.
+- [ ] ao selecionar um livro. informar o histórico de alunos que reservaram.
+
 ---
