@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\CategoriaLivro;
 use Illuminate\Http\Request;
 use App\Models\Livro;
+use Exception;
 
 class LivroController extends Controller
 {
@@ -25,7 +26,7 @@ class LivroController extends Controller
     {
         $categorias = CategoriaLivro::all();
 
-        return view('livro.create',[
+        return view('livro.create', [
             'categorias' => $categorias
         ]);
     }
@@ -35,8 +36,19 @@ class LivroController extends Controller
      */
     public function store(Request $request)
     {
-
+        
+        $request->validate([
+            'titulo' => 'required|string|max:255|min:10',
+            'resumo' => 'required|string',
+            'autor' => 'required|string|max:255',
+            'numero_paginas' => 'required|integer|min:20',
+            'ano_publicacao' => 'required|integer|min:0',
+            'quantidade_total' => 'required|integer|min:1',
+            'categoria_livro_id' => 'required|exists:categoria_livros,id'
+        ]);
+        
         $livro = new Livro();
+
         $livro->titulo = $request->titulo;
         $livro->resumo = $request->resumo;
         $livro->autor = $request->autor;
@@ -47,16 +59,14 @@ class LivroController extends Controller
         $livro->categoria_livro_id = $request->categoria_livro_id;
 
         $livro->save();
+
         return redirect()->route('livro.index');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
-    {
-        
-    }
+    public function show(string $id) {}
 
     /**
      * Show the form for editing the specified resource.
@@ -74,6 +84,17 @@ class LivroController extends Controller
      */
     public function update(Request $request, Livro $livro)
     {
+        $request->validate([
+            'titulo' => 'required|string|max:255|min:10',
+            'resumo' => 'required|string',
+            'autor' => 'required|string|max:255',
+            'numero_paginas' => 'required|integer|min:20',
+            'ano_publicacao' => 'required|integer|min:0',
+            'quantidade_total' => 'required|integer|min:1',
+            'quantidade_disponivel' => 'required|integer|min:0|max:'.$request->quantidade_total,
+            'categoria_livro_id' => 'required|exists:categoria_livros,id'
+        ]);
+
         $livro->titulo = $request->titulo;
         $livro->resumo = $request->resumo;
         $livro->autor = $request->autor;
@@ -89,7 +110,8 @@ class LivroController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Livro $livro) {
+    public function destroy(Livro $livro)
+    {
         $livro->delete();
         return redirect()->route('livro.index');
     }
