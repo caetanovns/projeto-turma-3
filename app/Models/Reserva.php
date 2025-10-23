@@ -22,6 +22,6 @@ class Reserva extends Model
 
     public function status()
     {
-        return $this->belongsTo(ReservaStatus::class);
+        return $this->belongsTo(ReservaStatus::class, 'reserva_status_id');
     }
 }

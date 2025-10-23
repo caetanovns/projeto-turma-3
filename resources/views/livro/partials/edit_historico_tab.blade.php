@@ -17,7 +17,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach($livro->reservas as $historico)
+            @foreach($livro->reservas->sort() as $historico)
             <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200">
                 <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                     {{ $historico->aluno->matricula }}
@@ -26,10 +26,10 @@
                     {{ $historico->aluno->user->name }}
                 </td>
                 <td class="px-6 py-4">
-                    {{ $historico->data_reserva }}
+                    {{ Carbon\Carbon::parse($historico->data_reserva)->format('d/m/Y') }}
                 </td>
                 <td class="px-6 py-4">
-                    {{ $historico->status }}
+                    {{ $historico->status->nome }}
                 </td>
             </tr>
             @endforeach
