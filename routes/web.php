@@ -18,5 +18,5 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::resource('/livro', App\Http\Controllers\LivroController::class);
-
+Route::resource('/reservar', App\Http\Controllers\ReservarController::class);
 require __DIR__.'/auth.php';

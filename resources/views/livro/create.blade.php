@@ -45,13 +45,8 @@
                             <input type="number" id="total" name="quantidade_total" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
                         </div>
 
-                        <label for="categorias" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Selecione uma categoria</label>
-                        <select id="categorias" name="categoria_livro_id" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                            <option selected>Selecione uma categoria</option>
-                            @foreach($categorias as $categoria)
-                            <option value="{{$categoria->id}}">{{$categoria->nome}}</option>
-                            @endforeach
-                        </select>
+                        <x-input.select :options="$categorias" label="Selecione uma Categoria" name="categoria_id"/>
+                        
                         <button type="submit" class="mt-4 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Enviar</button>
                     </form>
                 </div>
