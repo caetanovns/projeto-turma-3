@@ -23,5 +23,9 @@ O sistema será desenvolvido utilizando tecnologias modernas de backend e fronte
 - [X] adicionar validação na requisição para adicionar/editar livros
 - [X] ao selecionar um livro. informar o histórico de alunos que já reservaram.
 - [X] no histórico correção da tabela de status.
+
+### 📅 2025-09-29
+- [X] construir menu de reservar livro
+- [X] adicionado feature de reservar livro.
+- [X] adicionado componente de select.
 - [ ] filtro da páginas de livros categoria e autor.
-- [ ] construir menu de reservar livro
